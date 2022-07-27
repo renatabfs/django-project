@@ -1,12 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+      html,
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(-45deg, #412a7e, #1d1434, #1a152c, #0f0823);
+        background-size: 400% 400%;
+        animation: gradient 60s ease infinite;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 50px;
+        justify-content: center;
+        height: 100%;
+      }
+
+      #header {
+        font-size: 8vmin;
+        background: -webkit-linear-gradient(45deg, #b577eb, #f6b8d0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+      }
+
+      .calculadora {
+        background-color: rgba(126, 71, 123, 0.144);
+        border-radius: 15px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .secondary {
+        background-color: rgba(126, 71, 123, 0.144);
+        display: flex;
+        min-width: 75px;
+        min-height: 75px;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 30px;
+        color: #b577eb;
+      }
+
+      h1 {
+        margin: 0;
+        padding: 0;
+      }
+
+      #simbolos {
+        color: #b577eb;
+        margin-inline: 2vw;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      input {
+        border: none;
+        background-color: transparent;
+        width: 75px;
+        height: 75px;
+        font-family: "Poppins", sans-serif;
+        color: #b577eb;
+        font-size: 2rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="header">Calculadora em Django</h1>
+      <div class="calculadora">
+        <div class="secondary">
+          <input type="number" name="num1" onchange="sum()"  value="0" id="num1" />
+        </div>
+        <h1 id="simbolos">+</h1>
+        <div class="secondary">
+          <input type="number" name="num2" onchange="sum()" value="0" id="num2" />
+        </div>
+        <h1 id="simbolos">=</h1>
+        <div class="secondary">
+          <h1 id="resultado">0</h1>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const num1 = document.querySelector("#num1");
+      const num2 = document.querySelector("#num2");
+
+      function sum() {
+        const resultado = document.querySelector("#resultado");
+        const soma = parseInt(num1.value) + parseInt(num2.value);
+        resultado.textContent = `${soma}`;
+      }
+    </script>
+  </body>
 </html>
