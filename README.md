@@ -4,11 +4,13 @@
 Grupo:
 </h2>
 <h3>
-Giovana Letícia
-Renata Beatriz
-Carolina Fernandes
-Dionísio Barbosa
-Ewerton Barbosa
-Pedro Henrique
-Pedro Vinícius
+<ol>
+<li> Giovana Letícia </li>
+<li>Renata Beatriz </li>
+<li>Carolina Fernandes </li>
+<li>Dionísio Barbosa </li>
+<li>Ewerton Barbosa </li>
+<li>Pedro Henrique </li>
+<li>Pedro Vinícius </li>
 </h3>
+</ol>
